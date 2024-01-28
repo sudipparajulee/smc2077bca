@@ -3,7 +3,7 @@
     <h2 class="font-bold text-3xl text-blue-800">Edit Category</h2>
     <hr class="h-1 bg-red-600">
 
-    <form action="{{route('category.store')}}" method="POST" class="mt-5">
+    <form action="{{route('category.update',$category->id)}}" method="POST" class="mt-5">
         @csrf
         <input type="text" name="categoryname" placeholder="Category Name" class="block w-full rounded border-gray-300 my-4" value="{{$category->categoryname}}">
         @error('categoryname')
