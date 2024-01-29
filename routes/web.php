@@ -34,6 +34,8 @@ Route::get('/category/{id}/edit',[CategoryController::class,'edit'])->middleware
 
 Route::post('/category/{id}/update',[CategoryController::class,'update'])->middleware('auth')->name('category.update');
 
+Route::get('/category/{id}/delete',[CategoryController::class,'delete'])->middleware('auth')->name('category.delete');
+
 Route::get('/dashboard', function () {
     return view('dashboard');
 })->middleware(['auth', 'verified'])->name('dashboard');
