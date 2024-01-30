@@ -1,5 +1,17 @@
 @extends('layouts.app')
 @section('content')
+    @if(session('success'))
+    <div id="message" class="fixed top-2 right-0">
+        <div class="bg-green-600 text-white text-xl px-10 py-4">
+            <p>{{session('success')}}</p>
+        </div>
+    </div>
+    <script>
+        $('#message').delay(1500).slideUp(500);
+    </script>
+    @endif
+
+
     <h2 class="font-bold text-3xl text-blue-800">Categories</h2>
     <hr class="h-1 bg-red-600">
 

@@ -38,7 +38,7 @@ class CategoryController extends Controller
 
         Category::create($data);
 
-        return redirect(route('category.index'));
+        return redirect(route('category.index'))->with('success','Category Added Successfully');
     }
 
     public function edit($id){
@@ -57,13 +57,13 @@ class CategoryController extends Controller
 
         $category = Category::findOrFail($id);
         $category->update($data);
-        return redirect(route('category.index'));
+        return redirect(route('category.index'))->with('success','Category Updated Successfully');
     }
 
     public function delete($id)
     {
         $category = Category::findOrFail($id);
         $category->delete();
-        return redirect(route('category.index'));
+        return redirect(route('category.index'))->with('success','Category Deleted Successfully');
     }
 }
