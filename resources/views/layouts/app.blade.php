@@ -27,7 +27,7 @@
 
                     <a href="{{route('category.index')}}" class="block px-2 py-3 text-lg border-l-4 border-blue-600 m-2 hover:bg-gray-300">Category</a>
 
-                    <a href="" class="block px-2 py-3 text-lg border-l-4 border-blue-600 m-2 hover:bg-gray-300">Products</a>
+                    <a href="{{route('product.index')}}" class="block px-2 py-3 text-lg border-l-4 border-blue-600 m-2 hover:bg-gray-300">Products</a>
 
                     <a href="" class="block px-2 py-3 text-lg border-l-4 border-blue-600 m-2 hover:bg-gray-300">Users</a>
 
