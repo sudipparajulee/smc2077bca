@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Category;
 use Illuminate\Http\Request;
 
 class ProductController extends Controller
@@ -13,11 +14,12 @@ class ProductController extends Controller
 
     public function create()
     {
-        return view('product.create');
+        $categories = Category::orderBy('priority')->get();
+        return view('product.create',compact('categories'));
     }
 
     public function store(Request $request){
-
+        dd($request->all());
     }
 
     public function edit($id){
