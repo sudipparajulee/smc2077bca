@@ -3,7 +3,7 @@
     <h1 class="text-3xl font-bold text-blue-800">Add Product</h1>
     <hr class="h-1 bg-red-500">
 
-    <form action="{{route('product.store')}}" method="POST" class="mt-5">
+    <form action="{{route('product.store')}}" method="POST" class="mt-5" enctype="multipart/form-data">
         @csrf
         <select name="category_id" id="" class="block w-full p-2 rounded my-2">
             @foreach($categories as $category)
