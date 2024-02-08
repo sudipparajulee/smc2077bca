@@ -22,14 +22,16 @@
 
         @foreach($products as $product)
         <tr>
-            <td class="border p-2">1</td>
-            <td class="border p-2">{{$product->category_id}}</td>
+            <td class="border p-2">{{$loop->iteration}}</td>
+            <td class="border p-2">{{$product->category->categoryname}}</td>
             <td class="border p-2">{{$product->name}}</td>
             <td class="border p-2">{{$product->description}}</td>
             <td class="border p-2">{{$product->price}}</td>
-            <td class="border p-2">10</td>
-            <td class="border p-2">Show</td>
-            <td class="border p-2">Photo</td>
+            <td class="border p-2">{{$product->stock}}</td>
+            <td class="border p-2">{{$product->status}}</td>
+            <td class="border p-2">
+                <img src="{{asset('images/products/'.$product->photopath)}}" class="h-32" alt="">
+            </td>
             <td class="border p-2">
                 <a href="" class="bg-blue-600 text-white px-3 py-1 rounded">Edit</a>
                 <a href="" class="bg-red-600 text-white px-3 py-1 rounded">Delete</a>
