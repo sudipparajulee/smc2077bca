@@ -34,7 +34,7 @@
             </td>
             <td class="border p-2">
                 <a href="{{route('product.edit',$product->id)}}" class="bg-blue-600 text-white px-3 py-1 rounded">Edit</a>
-                <a href="" class="bg-red-600 text-white px-3 py-1 rounded">Delete</a>
+                <a href="{{route('product.delete',$product->id)}}" onclick="return confirm('Are you sure to delete?')" class="bg-red-600 text-white px-3 py-1 rounded">Delete</a>
             </td>
         </tr>
         @endforeach

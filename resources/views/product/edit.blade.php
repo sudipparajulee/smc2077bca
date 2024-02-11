@@ -5,6 +5,7 @@
 
     <form action="{{route('product.update',$product->id)}}" method="POST" class="mt-5" enctype="multipart/form-data">
         @csrf
+        @method('PUT')
         <select name="category_id" id="" class="block w-full p-2 rounded my-2">
             @foreach($categories as $category)
             <option value="{{$category->id}}"
@@ -61,7 +62,7 @@
             </div>
         @enderror
         <div class="flex justify-center gap-5">
-            <button type="submit" class="bg-blue-600 text-white py-2 px-4 rounded">Add Product</button>
+            <button type="submit" class="bg-blue-600 text-white py-2 px-4 rounded">Update Product</button>
         <a href="{{route('product.index')}}" class="bg-red-600 text-white py-2 px-8 rounded">Cancel</a>
         </div>
     </form>
