@@ -1,7 +1,16 @@
 @extends('layouts.master')
 @section('content')
-    <div>
-        <img src="https://smc.edu.np/wp-content/uploads/2023/11/smc-arial-view.jpg" class="w-full" alt="">
+    <h1 class="text-4xl font-bold text-center my-10">Latest Products</h1>
+
+    <div class="grid grid-cols-4 gap-10 pb-10 px-24">
+        @foreach($products as $product)
+            <div class="border p-4 rounded shadow">
+                <img src="{{asset('images/products/'.$product->photopath)}}" class="w-full h-44 object-cover" alt="">
+                <h2 class="text-xl font-bold my-2">{{$product->name}}</h2>
+                <p class="text-gray-700">{{$product->description}}</p>
+                <p class="text-gray-700 font-bold mt-2">Rs {{$product->price}}</p>
+                <a href="" class="bg-blue-500 text-white py-2 px-4 mt-2 inline-block">View</a>
+            </div>
+        @endforeach
     </div>
-    <p>Author: {{ $name }}</p>
 @endsection
