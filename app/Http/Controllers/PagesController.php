@@ -22,4 +22,9 @@ class PagesController extends Controller
     {
         return view('contact');
     }
+
+    public function viewproduct()
+    {
+        return view('viewproduct');
+    }
 }

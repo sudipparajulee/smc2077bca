@@ -25,6 +25,8 @@ Route::get('/about-us', [PagesController::class, 'about']);
 
 Route::get('/contact', [PagesController::class, 'contact']);
 
+Route::get('/viewproduct', [PagesController::class, 'viewproduct']);
+
 Route::middleware('auth')->group(function(){
 
 Route::get('/category', [CategoryController::class, 'index'])->name('category.index');
