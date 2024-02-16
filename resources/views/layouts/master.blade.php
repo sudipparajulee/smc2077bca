@@ -9,8 +9,12 @@
             <img src="https://icms-image.slatic.net/images/ims-web/e6ac6883-1158-4663-bda4-df5a1aa066e5.png" class="w-24" alt="">
             <div class="text-white font-bold">
                 <a class="mx-2" href="/">Home</a>
-                <a class="mx-2" href="/about-us">About</a>
-                <a class="mx-2" href="/contact">Contact</a>
+                @php
+                $categories = \App\Models\Category::orderBy('priority')->get();
+                @endphp
+                @foreach($categories as $category)
+                <a class="mx-2" href=""> {{$category->categoryname}}</a>
+                @endforeach
                 <a class="mx-2" href="/login">Login</a>
             </div>
         </nav>

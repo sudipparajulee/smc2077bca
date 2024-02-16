@@ -23,8 +23,9 @@ class PagesController extends Controller
         return view('contact');
     }
 
-    public function viewproduct()
+    public function viewproduct($id)
     {
-        return view('viewproduct');
+        $product = Product::find($id);
+        return view('viewproduct',compact('product'));
     }
 }

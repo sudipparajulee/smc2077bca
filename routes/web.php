@@ -25,7 +25,7 @@ Route::get('/about-us', [PagesController::class, 'about']);
 
 Route::get('/contact', [PagesController::class, 'contact']);
 
-Route::get('/viewproduct', [PagesController::class, 'viewproduct']);
+Route::get('/{id}/viewproduct', [PagesController::class, 'viewproduct'])->name('viewproduct');
 
 Route::middleware('auth')->group(function(){
 
