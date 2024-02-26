@@ -15,7 +15,16 @@
                 @foreach($categories as $category)
                 <a class="mx-2" href=""> {{$category->categoryname}}</a>
                 @endforeach
+
+                @auth
+                <a class="mx-2" href="">Welcome, {{auth()->user()->name}}</a>
+                <form action="/logout" method="POST" class="inline">
+                    @csrf
+                <button type="submit">&rArr;</button>
+                </form>
+                @else
                 <a class="mx-2" href="/login">Login</a>
+                @endauth
             </div>
         </nav>
         @yield('content')
