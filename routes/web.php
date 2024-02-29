@@ -2,6 +2,7 @@
 
 // use App\Http\Controllers\PagesController;
 
+use App\Http\Controllers\CartController;
 use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\PagesController;
 use App\Http\Controllers\ProductController;
@@ -26,6 +27,8 @@ Route::get('/about-us', [PagesController::class, 'about']);
 Route::get('/contact', [PagesController::class, 'contact']);
 
 Route::get('/{id}/viewproduct', [PagesController::class, 'viewproduct'])->name('viewproduct');
+
+Route::post('/addtocart', [CartController::class, 'store'])->middleware('auth')->name('addtocart');
 
 Route::middleware('auth')->group(function(){
 
