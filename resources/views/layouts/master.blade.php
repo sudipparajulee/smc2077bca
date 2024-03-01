@@ -4,9 +4,11 @@
         <link rel="stylesheet" href="{{ asset('css/style.css') }}">
 
         <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js" ></script>
-
+        <link
+    href="https://cdn.jsdelivr.net/npm/remixicon@4.2.0/fonts/remixicon.css"
+    rel="stylesheet"
+/>
         @vite(['resources/css/app.css', 'resources/js/app.js'])
-        <script src="https://cdn.tailwindcss.com"></script>
     </head>
     <body>
         @if(session('success'))
@@ -32,13 +34,15 @@
 
                 @auth
                 <a class="mx-2" href="">Welcome, {{auth()->user()->name}}</a>
+                <a href="{{route('cart')}}" class="mx-2"><i class="ri-shopping-cart-fill"></i></a>
                 <form action="/logout" method="POST" class="inline">
                     @csrf
-                <button type="submit">&rArr;</button>
+                <button type="submit"><i class="ri-logout-circle-r-line"></i></button>
                 </form>
                 @else
                 <a class="mx-2" href="/login">Login</a>
                 @endauth
+
             </div>
         </nav>
         @yield('content')

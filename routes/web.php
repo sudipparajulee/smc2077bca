@@ -28,6 +28,8 @@ Route::get('/contact', [PagesController::class, 'contact']);
 
 Route::get('/{id}/viewproduct', [PagesController::class, 'viewproduct'])->name('viewproduct');
 
+Route::get('/cart', [CartController::class, 'index'])->middleware('auth')->name('cart');
+
 Route::post('/addtocart', [CartController::class, 'store'])->middleware('auth')->name('addtocart');
 
 Route::middleware('auth')->group(function(){
