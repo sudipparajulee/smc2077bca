@@ -44,7 +44,22 @@
                        success: function(response)
                        {
                           console.log('successfully paid');
-                          //store data here.
+                          $.ajax({
+                             method: 'POST',
+                             url: "{{route('order.store')}}",
+                             data: {
+                                cart_id: {{$cart->id}},
+                                _token: '{{csrf_token()}}'
+                            },
+                             success: function(response)
+                             {
+                                location.href = "/";
+                             },
+                             error: function(data)
+                             {
+                                console.log(data.message);
+                             }
+                          });
                        },
                        error: function(data)
                        {
