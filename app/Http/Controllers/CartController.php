@@ -14,6 +14,12 @@ class CartController extends Controller
         return view('cart', compact('carts'));
     }
 
+    public function checkout($id)
+    {
+        $cart = Cart::find($id);
+        return view('checkout', compact('cart'));
+    }
+
     public function store(Request $request)
     {
         $data = $request->validate([

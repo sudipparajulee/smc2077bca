@@ -4,6 +4,7 @@
 
 use App\Http\Controllers\CartController;
 use App\Http\Controllers\CategoryController;
+use App\Http\Controllers\KhaltiController;
 use App\Http\Controllers\PagesController;
 use App\Http\Controllers\ProductController;
 use App\Http\Controllers\ProfileController;
@@ -29,6 +30,10 @@ Route::get('/contact', [PagesController::class, 'contact']);
 Route::get('/{id}/viewproduct', [PagesController::class, 'viewproduct'])->name('viewproduct');
 
 Route::get('/cart', [CartController::class, 'index'])->middleware('auth')->name('cart');
+
+Route::get('/checkout/{id}', [CartController::class, 'checkout'])->middleware('auth')->name('checkout');
+
+Route::post('/khalti/verify', [KhaltiController::class, 'verify'])->name('khalti.verify');
 
 Route::post('/addtocart', [CartController::class, 'store'])->middleware('auth')->name('addtocart');
 
