@@ -30,7 +30,7 @@
 
                     <a href="{{route('product.index')}}" class="block px-2 py-3 text-lg border-l-4 border-blue-600 m-2 hover:bg-gray-300">Products</a>
 
-                    <a href="" class="block px-2 py-3 text-lg border-l-4 border-blue-600 m-2 hover:bg-gray-300">Users</a>
+                    <a href="{{route('user.index')}}" class="block px-2 py-3 text-lg border-l-4 border-blue-600 m-2 hover:bg-gray-300">Users</a>
 
                     <a href="" class="block px-2 py-3 text-lg border-l-4 border-blue-600 m-2 hover:bg-gray-300">Orders</a>
 

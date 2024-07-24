@@ -22,4 +22,11 @@ class OrderController extends Controller
         return redirect('/cart')->with('success', 'Order placed successfully');
 
     }
+
+
+    public function index()
+    {
+        $orders = Order::all();
+        return view('order.index',compact('orders'));
+    }
 }

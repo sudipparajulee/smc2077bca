@@ -9,6 +9,7 @@ use App\Http\Controllers\OrderController;
 use App\Http\Controllers\PagesController;
 use App\Http\Controllers\ProductController;
 use App\Http\Controllers\ProfileController;
+use App\Http\Controllers\UserController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -61,6 +62,13 @@ Route::post('/product/store',[ProductController::class,'store'])->name('product.
 Route::get('/product/{id}/edit',[ProductController::class,'edit'])->name('product.edit');
 Route::put('/product/{id}/update',[ProductController::class,'update'])->name('product.update');
 Route::get('/product/{id}/delete',[ProductController::class,'delete'])->name('product.delete');
+
+
+//User
+Route::get('/user',[UserController::class,'index'])->name('user.index');
+
+//order
+Route::get('/orders',[OrderController::class,'index'])->name('order.index');
 
 });
 
