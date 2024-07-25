@@ -32,7 +32,7 @@
 
                     <a href="{{route('user.index')}}" class="block px-2 py-3 text-lg border-l-4 border-blue-600 m-2 hover:bg-gray-300">Users</a>
 
-                    <a href="" class="block px-2 py-3 text-lg border-l-4 border-blue-600 m-2 hover:bg-gray-300">Orders</a>
+                    <a href="{{route('order.index')}}" class="block px-2 py-3 text-lg border-l-4 border-blue-600 m-2 hover:bg-gray-300">Orders</a>
 
                     <form action="{{route('logout')}}" method="POST" class="w-full overflow-hidden">
                         @csrf
