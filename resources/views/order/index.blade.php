@@ -29,9 +29,9 @@
         <td class="border p-2">{{$order->price * $order->quantity}}</td>
         <td class="border p-2">{{$order->status}}</td>
         <td class="border p-2 grid gap-1">
-            <a href="" class="bg-blue-500 text-white px-2 py-1 rounded-lg text-center">Pending</a>
-            <a href="" class="bg-yellow-500 text-white px-2 py-1 rounded-lg text-center">Processing</a>
-            <a href="" class="bg-green-500 text-white px-2 py-1 rounded-lg text-center">Delivered</a>
+            <a href="{{route('order.status',[$order->id,'Pending'])}}" class="bg-blue-500 text-white px-2 py-1 rounded-lg text-center">Pending</a>
+            <a href="{{route('order.status',[$order->id,'Processing'])}}" class="bg-yellow-500 text-white px-2 py-1 rounded-lg text-center">Processing</a>
+            <a href="{{route('order.status',[$order->id,'Delivered'])}}" class="bg-green-500 text-white px-2 py-1 rounded-lg text-center">Delivered</a>
         </td>
     @endforeach
 </table>

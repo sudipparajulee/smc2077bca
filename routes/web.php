@@ -69,6 +69,7 @@ Route::get('/user',[UserController::class,'index'])->name('user.index');
 
 //order
 Route::get('/orders',[OrderController::class,'index'])->name('order.index');
+Route::get('/order/{id}/status/{status}',[OrderController::class,'status'])->name('order.status');
 
 });
 
