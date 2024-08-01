@@ -29,7 +29,7 @@
                 $categories = \App\Models\Category::orderBy('priority')->get();
                 @endphp
                 @foreach($categories as $category)
-                <a class="mx-2" href=""> {{$category->categoryname}}</a>
+                <a class="mx-2" href="{{route('categoryproduct',$category->id)}}"> {{$category->categoryname}}</a>
                 @endforeach
 
                 @auth

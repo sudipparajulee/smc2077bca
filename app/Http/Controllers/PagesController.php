@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Category;
 use App\Models\Product;
 use Illuminate\Http\Request;
 
@@ -27,5 +28,12 @@ class PagesController extends Controller
     {
         $product = Product::find($id);
         return view('viewproduct',compact('product'));
+    }
+
+    public function categoryproduct($catid)
+    {
+        $category = Category::find($catid);
+        $products = Product::where('category_id',$catid)->get();
+        return view('categoryproduct',compact('products','category'));
     }
 }
