@@ -17,6 +17,7 @@
         <th class="border p-2">Action</th>
     </tr>
     @foreach($orders as $order)
+    <tr>
         <td class="border p-2">{{$loop->iteration}}</td>
         <td class="border p-2">
             <img src="{{asset('images/products/'.$order->product->photopath)}}" alt="" class="h-16">
@@ -33,6 +34,7 @@
             <a href="{{route('order.status',[$order->id,'Processing'])}}" class="bg-yellow-500 text-white px-2 py-1 rounded-lg text-center">Processing</a>
             <a href="{{route('order.status',[$order->id,'Delivered'])}}" class="bg-green-500 text-white px-2 py-1 rounded-lg text-center">Delivered</a>
         </td>
+    </tr>
     @endforeach
 </table>
 @endsection
