@@ -33,6 +33,7 @@ Route::get('/contact', [PagesController::class, 'contact']);
 Route::get('/categoryproduct/{catid}',[PagesController::class,'categoryproduct'])->name('categoryproduct');
 
 Route::get('/{id}/viewproduct', [PagesController::class, 'viewproduct'])->name('viewproduct');
+Route::get('/search', [PagesController::class, 'search'])->name('search');
 
 Route::get('/cart', [CartController::class, 'index'])->middleware('auth')->name('cart');
 

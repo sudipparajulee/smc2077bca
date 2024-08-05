@@ -23,8 +23,8 @@
         @endif
         <nav class="flex sticky top-0 justify-between shadow px-20 py-4 items-center bg-orange-500">
             <img src="https://icms-image.slatic.net/images/ims-web/e6ac6883-1158-4663-bda4-df5a1aa066e5.png" class="w-24" alt="">
-            <form action="" class="flex-1 w-full px-10 mt-5 flex items-center gap-4">
-                <input type="text" class="w-full block rounded-lg" placeholder="Search any Product">
+            <form action="{{route('search')}}" method="GET" class="flex-1 w-full px-10 mt-5 flex items-center gap-4">
+                <input type="text" class="w-full block rounded-lg" placeholder="Search any Product" name="search" value="{{request('search')}}" minlength="2" required>
                 <button class="bg-blue-600 text-white px-3 py-2 rounded-lg">Search</button>
             </form>
             <div class="text-white font-bold">

@@ -37,4 +37,11 @@ class PagesController extends Controller
         $products = Product::where('category_id',$catid)->get();
         return view('categoryproduct',compact('products','category'));
     }
+
+    public function search(Request $request)
+    {
+        $search = $request->search;
+        $products = Product::where('name','like','%'.$search.'%')->orWhere('description','like','%'.$search.'%')->get();
+        return view('search',compact('products','search'));
+    }
 }
