@@ -4,7 +4,7 @@
         <div class="">
             <img src="{{asset('images/products/'.$product->photopath)}}" class="w-full h-96 object-cover" alt="">
         </div>
-        <div>
+        <div class="border-x px-10">
             <h1 class="text-4xl font-bold">{{$product->name}}</h1>
             <p class="text-gray-700 my-5">Stock : {{$product->stock}}</p>
             <p class="text-gray-700 font-bold text-2xl">Rs {{$product->price}}</p>
@@ -16,9 +16,9 @@
             </form>
         </div>
         <div>
-            <p class="text-gray-700 my-5">Free Delivery</p>
-            <p class="text-gray-700 my-5">7 Days Return Policy</p>
-            <p class="text-gray-700 my-5">Cash on Delivery</p>
+            <p class="text-gray-700 my-5"><i class="ri-truck-fill"></i> Free Delivery</p>
+            <p class="text-gray-700 my-5"><i class="ri-history-line"></i> 7 Days Return Policy</p>
+            <p class="text-gray-700 my-5"><i class="ri-cash-fill"></i> Cash on Delivery</p>
         </div>
     </div>
     <div class="px-24">
