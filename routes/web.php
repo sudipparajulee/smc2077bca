@@ -45,7 +45,7 @@ Route::post('/order/store', [OrderController::class, 'store'])->middleware('auth
 
 Route::post('/addtocart', [CartController::class, 'store'])->middleware('auth')->name('addtocart');
 
-Route::middleware('auth')->group(function(){
+Route::middleware(['auth','isadmin'])->group(function(){
 
 Route::get('/category', [CategoryController::class, 'index'])->name('category.index');
 
@@ -77,7 +77,7 @@ Route::get('/order/{id}/status/{status}',[OrderController::class,'status'])->nam
 
 });
 
-Route::get('/dashboard',[DashboardController::class,'dashboard'])->middleware(['auth', 'verified'])->name('dashboard');
+Route::get('/dashboard',[DashboardController::class,'dashboard'])->middleware(['auth', 'isadmin'])->name('dashboard');
 
 Route::middleware('auth')->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
