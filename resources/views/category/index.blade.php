@@ -27,11 +27,11 @@
         </tr>
         @foreach($categories as $category)
         <tr>
-            <td class="p-2 border border-gray-300"> {{$category->priority}} </td>
-            <td class="p-2 border border-gray-300">{{$category->categoryname}}</td>
+            <td class="p-2 border border-gray-300"> {{$category['priority']}} </td>
+            <td class="p-2 border border-gray-300">{{$category['categoryname']}}</td>
             <td class="p-2 border border-gray-300">
-                <a class="px-2 py-1 rounded-lg bg-blue-500 text-white" href="{{route('category.edit',$category->id)}}">Edit</a>
-                <a class="px-2 py-1 rounded-lg bg-red-500 text-white" href="{{route('category.delete',$category->id)}}" onclick="return confirm('Are you sure to delete?');">Delete</a>
+                <a class="px-2 py-1 rounded-lg bg-blue-500 text-white" href="{{route('category.edit',$category['id'])}}">Edit</a>
+                <a class="px-2 py-1 rounded-lg bg-red-500 text-white" href="{{route('category.delete',$category['id'])}}" onclick="return confirm('Are you sure to delete?');">Delete</a>
             </td>
         </tr>
         @endforeach
