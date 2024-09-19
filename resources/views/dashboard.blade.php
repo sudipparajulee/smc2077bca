@@ -33,5 +33,39 @@
             <p class="text-xl">Total Sales</p>
             <h2 class="text-5xl font-bold">{{$totalsales}}</h2>
         </div>
+
+        <div class="shadow-lg rounded-lg overflow-hidden bg-gray-100">
+            <div class="py-3 px-5 bg-gray-50">Exam Attended</div>
+            <canvas class="p-10" id="chartPie2"></canvas>
+        </div>
     </div>
+
+    <!-- Required chart.js -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+    <script>
+        const dataPie2 = {
+            labels: ["Pending Orders", "Processing Orders", "Delivered Orders"],
+            datasets: [{
+                label: "Value",
+                data: [{{$pendingorders}}, {{$processingorders}}, {{$deliveredorders}}],
+                backgroundColor: [
+                    "rgb(90, 50, 241)",
+                    "rgb(101, 143, 200)",
+                    "rgb(0, 200, 20)",
+                    "rgb(150, 143, 0)",
+                    "rgb(100, 200, 0)",
+                ],
+                hoverOffset: 4,
+            }, ],
+        };
+
+        const configPie2 = {
+            type: "pie",
+            data: dataPie2,
+            options: {},
+        };
+
+        var chartBar = new Chart(document.getElementById("chartPie2"), configPie2);
+    </script>
 @endsection
